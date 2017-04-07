@@ -1,0 +1,22 @@
+﻿@model IEnumerable<GigHub.Models.Follow>
+
+@{
+    ViewBag.Title = "Who Am I Following?";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Artists I'm Following</h2>
+<ul class="following voffset4">
+    @foreach (var follow in Model)
+    {
+        <li>
+            <div class="details">
+                <span class="artist">
+                    @follow.Artist.Name
+                </span>
+                <button data-artist-id="@follow.ArtistId" class="btn btn-default pull-right btn-sm js-toggle-follow">unfollow</button>                
+            </div>
+        </li>
+    }
+</ul>
+
